@@ -103,7 +103,7 @@ var Toast = { render: function render() {
     var _vm = this;var _h = _vm.$createElement;var _c = _vm._self._c || _h;return _c('div', { staticClass: "l-toast", class: _vm.positionClass }, [_c('toast-transition', _vm._l(_vm.messages, function (m) {
       return _c('div', { key: m.id, staticClass: "l-toast-message", class: _vm.messageTypeClass(m) }, [m.type == 'info' ? _vm._t("icon-info") : _vm._e(), m.type == 'success' ? _vm._t("icon-success") : _vm._e(), m.type == 'warning' ? _vm._t("icon-warning") : _vm._e(), m.type == 'danger' ? _vm._t("icon-danger") : _vm._e(), m.text.title ? _c('div', { staticClass: "l-toast-message-title" }, [_vm._v(_vm._s(m.text.title))]) : _vm._e(), m.text.data ? _c('div', { staticClass: "l-toast-message-text" }, [_vm._v(_vm._s(m.text.data))]) : _vm._e(), _c('span', { staticClass: "l-toast-button", on: { "click": function click($event) {
             _vm.close(m.id);
-          } } })], 2);
+          } } }, [_vm._t("icon-close", [_vm._v("x")])], 2)], 2);
     }))], 1);
   }, staticRenderFns: [],
   props: {

@@ -8,7 +8,11 @@
         <slot v-if="m.type == 'danger'" name="icon-danger"></slot>
         <div v-if="m.text.title" class="l-toast-message-title">{{ m.text.title }}</div>
         <div v-if="m.text.data" class="l-toast-message-text">{{ m.text.data }}</div>
-        <span class="l-toast-button" @click="close(m.id)"></span>
+        <span class="l-toast-button" @click="close(m.id)">
+          <slot name="icon-close">
+            x
+          </slot>
+        </span>
       </div>
     </toast-transition>
   </div>
