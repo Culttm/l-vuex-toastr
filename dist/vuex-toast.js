@@ -1,11 +1,11 @@
 /*!
- * vuex-toast v0.1.1
- * https://github.com/ktsn/vuex-toast
+ * l-vuex-toastr v0.0.1
+ * undefined
  *
  * @license
- * Copyright (c) 2016 katashin
+ * Copyright (c) 2016 cult
  * Released under the MIT license
- * https://github.com/ktsn/vuex-toast/blob/master/LICENSE
+ * undefined/blob/master/LICENSE
  */
 (function (global, factory) {
 	typeof exports === 'object' && typeof module !== 'undefined' ? factory(exports, require('vuex')) :
@@ -100,10 +100,10 @@ var DefaultTransition = {
 var _extends = Object.assign || function (target) { for (var i = 1; i < arguments.length; i++) { var source = arguments[i]; for (var key in source) { if (Object.prototype.hasOwnProperty.call(source, key)) { target[key] = source[key]; } } } return target; };
 
 var Toast = { render: function render() {
-    var _vm = this;var _h = _vm.$createElement;var _c = _vm._self._c || _h;return _c('div', { staticClass: "toast", class: _vm.positionClass }, [_c('toast-transition', _vm._l(_vm.messages, function (m) {
-      return _c('div', { key: m.id, staticClass: "toast-message", class: _vm.messageTypeClass(m), attrs: { "role": "note" } }, [_c('div', { staticClass: "toast-message-text" }, [_vm._v(_vm._s(m.text))]), _c('button', { staticClass: "toast-button", attrs: { "aria-label": "Close", "type": "button" }, on: { "click": function click($event) {
+    var _vm = this;var _h = _vm.$createElement;var _c = _vm._self._c || _h;return _c('div', { staticClass: "l-toast", class: _vm.positionClass }, [_c('toast-transition', _vm._l(_vm.messages, function (m) {
+      return _c('div', { key: m.id, staticClass: "l-toast-message", class: _vm.messageTypeClass(m) }, [m.type == 'info' ? _vm._t("icon-info") : _vm._e(), m.type == 'success' ? _vm._t("icon-success") : _vm._e(), m.type == 'warning' ? _vm._t("icon-warning") : _vm._e(), m.type == 'danger' ? _vm._t("icon-danger") : _vm._e(), m.text.title ? _c('div', { staticClass: "l-toast-message-title" }, [_vm._v(_vm._s(m.text.title))]) : _vm._e(), m.text.data ? _c('div', { staticClass: "l-toast-message-text" }, [_vm._v(_vm._s(m.text.data))]) : _vm._e(), _c('span', { staticClass: "l-toast-button", on: { "click": function click($event) {
             _vm.close(m.id);
-          } } })]);
+          } } })], 2);
     }))], 1);
   }, staticRenderFns: [],
   props: {
@@ -121,7 +121,7 @@ var Toast = { render: function render() {
     messages: 'toastMessages'
   }), {
     positionClass: function positionClass() {
-      return 'toast-position-' + this.position;
+      return 'l-toast-position-' + this.position;
     }
   }),
 
@@ -129,7 +129,7 @@ var Toast = { render: function render() {
     close: REMOVE
   }), {
     messageTypeClass: function messageTypeClass(message) {
-      return 'toast-type-' + message.type;
+      return 'l-type-' + message.type;
     }
   }),
 

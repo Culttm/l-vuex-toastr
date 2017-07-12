@@ -35,7 +35,7 @@ export default {
     }),
 
     positionClass() {
-      return `toast-position-${this.position}`
+      return `l-toast-position-${this.position}`
     }
   },
 
@@ -45,7 +45,7 @@ export default {
     }),
 
     messageTypeClass(message) {
-      return `toast-type-${message.type}`
+      return `l-type-${message.type}`
     }
   },
 
