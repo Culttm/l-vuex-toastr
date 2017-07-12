@@ -1,8 +1,8 @@
 {
-  "name": "vuex-toast",
-  "version": "0.1.1",
-  "author": "katashin",
-  "description": "Simple toast notification using Vuex",
+  "name": "l-vuex-toastr",
+  "version": "0.0.1",
+  "author": "cult",
+  "description": "CUstom vuex toastr",
   "keywords": [
     "UI",
     "Flux",
@@ -15,12 +15,6 @@
   "files": [
     "dist"
   ],
-  "homepage": "https://github.com/ktsn/vuex-toast",
-  "bugs": "https://github.com/ktsn/vuex-toast/issues",
-  "repository": {
-    "type": "git",
-    "url": "https://github.com/ktsn/vuex-toast.git"
-  },
   "scripts": {
     "prepublish": "npm run flow && npm run lint && npm run build",
     "build": "npm run build:cjs && npm run build:dev && npm run build:prod",
