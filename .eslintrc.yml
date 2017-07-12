@@ -1,0 +1,9 @@
+---
+  extends: eslint-config-ktsn
+  parser: babel-eslint
+  plugins:
+    - html
+    - flowtype
+  rules:
+    flowtype/define-flow-type: 1
+    flowtype/use-flow-type: 1
