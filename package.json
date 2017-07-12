@@ -2,7 +2,7 @@
   "name": "l-vuex-toastr",
   "version": "0.0.1",
   "author": "cult",
-  "description": "CUstom vuex toastr",
+  "description": "Custom vuex toastr",
   "keywords": [
     "UI",
     "Flux",
