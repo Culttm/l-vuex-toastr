@@ -100,42 +100,42 @@ var DefaultTransition = {
 var _extends = Object.assign || function (target) { for (var i = 1; i < arguments.length; i++) { var source = arguments[i]; for (var key in source) { if (Object.prototype.hasOwnProperty.call(source, key)) { target[key] = source[key]; } } } return target; };
 
 var Toast = { render: function render() {
-    var _vm = this;var _h = _vm.$createElement;var _c = _vm._self._c || _h;return _c('div', { staticClass: "l-toast", class: _vm.positionClass }, [_c('toast-transition', _vm._l(_vm.messages, function (m) {
-      return _c('div', { key: m.id, staticClass: "l-toast-message", class: _vm.messageTypeClass(m) }, [m.type == 'info' ? _vm._t("icon-info") : _vm._e(), m.type == 'success' ? _vm._t("icon-success") : _vm._e(), m.type == 'warning' ? _vm._t("icon-warning") : _vm._e(), m.type == 'danger' ? _vm._t("icon-danger") : _vm._e(), m.text.title ? _c('div', { staticClass: "l-toast-message-title" }, [_vm._v(_vm._s(m.text.title))]) : _vm._e(), m.text.data ? _c('div', { staticClass: "l-toast-message-text" }, [_vm._v(_vm._s(m.text.data))]) : _vm._e(), _c('span', { staticClass: "l-toast-button", on: { "click": function click($event) {
-            _vm.close(m.id);
-          } } }, [_vm._t("icon-close", [_vm._v("x")])], 2)], 2);
-    }))], 1);
-  }, staticRenderFns: [],
-  props: {
-    position: {
-      validator: function validator(value) {
-        return (/^(:?n|s|nw|ne|sw|se)$/.test(value)
-        );
-      },
+        var _vm = this;var _h = _vm.$createElement;var _c = _vm._self._c || _h;return _c('div', { staticClass: "l-toast", class: _vm.positionClass }, [_c('toast-transition', _vm._l(_vm.messages, function (m) {
+            return _c('div', { key: m.id, staticClass: "l-toast-message", class: _vm.messageTypeClass(m) }, [m.type == 'danger' ? _c('icon', { staticClass: "type-icon", attrs: { "type": "Danger" } }) : _vm._e(), m.type == 'success' ? _c('icon', { staticClass: "type-icon", attrs: { "type": "Success" } }) : _vm._e(), m.text.title ? _c('div', { staticClass: "l-toast-message-title" }, [_vm._v(_vm._s(m.text.title))]) : _vm._e(), m.text.data ? _c('div', { staticClass: "l-toast-message-text" }, [_vm._v(_vm._s(m.text.data))]) : _vm._e(), _c('span', { staticClass: "l-toast-button", on: { "click": function click($event) {
+                        _vm.close(m.id);
+                    } } }, [_c('icon', { staticClass: "close-icon", attrs: { "type": "Close" } })], 1)], 1);
+        }))], 1);
+    }, staticRenderFns: [],
+    props: {
+        position: {
+            validator: function validator(value) {
+                return (/^(:?n|s|nw|ne|sw|se)$/.test(value)
+                );
+            },
 
-      default: 'ne'
+            default: 'ne'
+        }
+    },
+
+    computed: _extends({}, vuex.mapGetters({
+        messages: 'toastMessages'
+    }), {
+        positionClass: function positionClass() {
+            return 'l-toast-position-' + this.position;
+        }
+    }),
+
+    methods: _extends({}, vuex.mapActions({
+        close: REMOVE
+    }), {
+        messageTypeClass: function messageTypeClass(message) {
+            return 'l-type-' + message.type;
+        }
+    }),
+
+    components: {
+        ToastTransition: DefaultTransition
     }
-  },
-
-  computed: _extends({}, vuex.mapGetters({
-    messages: 'toastMessages'
-  }), {
-    positionClass: function positionClass() {
-      return 'l-toast-position-' + this.position;
-    }
-  }),
-
-  methods: _extends({}, vuex.mapActions({
-    close: REMOVE
-  }), {
-    messageTypeClass: function messageTypeClass(message) {
-      return 'l-type-' + message.type;
-    }
-  }),
-
-  components: {
-    ToastTransition: DefaultTransition
-  }
 };
 
 /**
