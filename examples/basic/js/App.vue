@@ -30,7 +30,12 @@
       <input class="submit-button" type="button" value="Send Notification" @click="addToast({ text, type })">
     </div>
 
-    <toast :position="position"></toast>
+    <toast :position="position">
+        <div slot="icon-info">icon-info</div>
+        <div slot="icon-warning">icon-warning</div>
+        <div slot="icon-success">icon-success</div>
+        <div slot="icon-danger">icon-danger</div>
+    </toast>
   </article>
 </template>
 

@@ -2,6 +2,10 @@
   <div class="l-toast" :class="positionClass">
     <toast-transition>
       <div class="l-toast-message" :class="messageTypeClass(m)" v-for="m in messages" :key="m.id">
+        <slot v-if="m.type == 'info'" name="icon-info"></slot>
+        <slot v-if="m.type == 'success'" name="icon-success"></slot>
+        <slot v-if="m.type == 'warning'" name="icon-warning"></slot>
+        <slot v-if="m.type == 'danger'" name="icon-danger"></slot>
         <div v-if="m.text.title" class="l-toast-message-title">{{ m.text.title }}</div>
         <div v-if="m.text.data" class="l-toast-message-text">{{ m.text.data }}</div>
         <span class="l-toast-button" @click="close(m.id)"></span>
