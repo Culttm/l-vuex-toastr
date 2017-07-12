@@ -2,7 +2,7 @@
   <article>
     <h1>Vuex Toast Demo</h1>
 
-    <input class="text" type="text" v-model="text">
+    <input class="text" type="text" v-model="text.title">
 
     <label>
       <span>Type</span>
@@ -41,7 +41,10 @@ import { mapActions } from 'vuex'
 export default {
   data: function () {
     return {
-      text: 'This is toast message',
+      text: {
+          title: 'Title !!!!!',
+          data: 'This is toast message'
+      },
       position: 'ne',
       type: 'info'
     }
