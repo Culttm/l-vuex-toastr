@@ -172,4 +172,5 @@ exports.createComponent = createComponent;
 exports.Toast = Toast;
 exports.ADD_TOAST_MESSAGE = ADD;
 exports.REMOVE_TOAST_MESSAGE = REMOVE;
+exports.REMOVE_ALL_TOAST_MESSAGES = REMOVE_ALL;
 exports.createModule = createModule;

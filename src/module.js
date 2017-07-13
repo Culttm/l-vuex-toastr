@@ -8,7 +8,8 @@ const REMOVE_ALL = `${PREFIX}REMOVE_ALL_MESSAGES`
 
 export {
   ADD as ADD_TOAST_MESSAGE,
-  REMOVE as REMOVE_TOAST_MESSAGE
+  REMOVE as REMOVE_TOAST_MESSAGE,
+  REMOVE_ALL as REMOVE_ALL_TOAST_MESSAGES
 }
 
 function createMessage(id: number, text: string, type: string, dismissAfter: number): ToastMessage {
