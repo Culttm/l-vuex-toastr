@@ -19,6 +19,7 @@ var PREFIX = '@@toast/';
 
 var ADD = PREFIX + 'ADD_TOAST_MESSAGE';
 var REMOVE = PREFIX + 'REMOVE_TOAST_MESSAGE';
+var REMOVE_ALL = PREFIX + 'REMOVE_ALL_MESSAGES';
 
 function createMessage(id, text, type, dismissAfter) {
   return {
@@ -67,6 +68,10 @@ function createModule() {
     var commit = _ref3.commit;
 
     commit(REMOVE, id);
+  }), _defineProperty(_actions, REMOVE_ALL, function (_ref4) {
+    var commit = _ref4.commit;
+
+    commit(REMOVE_ALL);
   }), _actions);
 
   var mutations = (_mutations = {}, _defineProperty(_mutations, ADD, function (state, data) {
@@ -75,6 +80,8 @@ function createModule() {
     state.messages = state.messages.filter(function (m) {
       return m.id !== id;
     });
+  }), _defineProperty(_mutations, REMOVE_ALL, function (state) {
+    state.messages = [];
   }), _mutations);
 
   return {

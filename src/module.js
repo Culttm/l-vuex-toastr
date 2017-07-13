@@ -4,6 +4,7 @@ const PREFIX = '@@toast/'
 
 const ADD = `${PREFIX}ADD_TOAST_MESSAGE`
 const REMOVE = `${PREFIX}REMOVE_TOAST_MESSAGE`
+const REMOVE_ALL = `${PREFIX}REMOVE_ALL_MESSAGES`
 
 export {
   ADD as ADD_TOAST_MESSAGE,
@@ -44,6 +45,10 @@ export function createModule(options: ToastOptions = {}) {
 
     [REMOVE] ({ commit }, id) {
       commit(REMOVE, id)
+    },
+
+    [REMOVE_ALL] ({ commit }) {
+      commit(REMOVE_ALL)
     }
   }
 
@@ -54,8 +59,12 @@ export function createModule(options: ToastOptions = {}) {
 
     [REMOVE] (state: ToastState, id: number) {
       state.messages = state.messages.filter(m => m.id !== id)
+    },
+
+    [REMOVE_ALL] (state: ToastState) {
+      state.messages = []
     }
-  }
+  };
 
   return {
     state,
