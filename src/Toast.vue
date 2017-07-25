@@ -1,5 +1,5 @@
 <template>
-    <div class="l-toast" :class="positionClass">
+    <div @click="toastClick" class="l-toast" :class="positionClass">
         <toast-transition>
             <div class="l-toast-message" :class="messageTypeClass(m)" v-for="m in messages" :key="m.id">
                 <icon v-if="m.type == 'danger'" class="type-icon" type="Danger"></icon>
@@ -46,6 +46,10 @@
 
             messageTypeClass(message) {
                 return `l-type-${message.type}`
+            },
+
+            toastClick(){
+                this.$emit('toastClick')
             }
         },
 
